@@ -1,3 +1,7 @@
+output "automation_connection_service_principals_id" {
+  description = "Map of id values across all automation_connection_service_principals, keyed the same as var.automation_connection_service_principals"
+  value       = { for k, v in azurerm_automation_connection_service_principal.automation_connection_service_principals : k => v.id }
+}
 output "automation_connection_service_principals_application_id" {
   description = "Map of application_id values across all automation_connection_service_principals, keyed the same as var.automation_connection_service_principals"
   value       = { for k, v in azurerm_automation_connection_service_principal.automation_connection_service_principals : k => v.application_id }
